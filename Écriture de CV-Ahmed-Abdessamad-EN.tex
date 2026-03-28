@@ -1,0 +1,251 @@
+% ============================================================
+%  CV – Ahmed ABDESSAMAD  (English version)
+%  Compiler : XeLaTeX or pdfLaTeX (Overleaf)
+%  Photo    : upload "avatar.png" in your Overleaf project
+% ============================================================
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[a4paper, left=1.8cm, right=1.8cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{tikz}
+
+% ── Colors ───────────────────────────────────────────────────────────────────
+\definecolor{cvblue}{HTML}{1a56a0}
+\definecolor{cvgray}{HTML}{555555}
+
+% ── Links ────────────────────────────────────────────────────────────────────
+\hypersetup{colorlinks=true, urlcolor=cvblue, linkcolor=cvblue}
+
+% ── No page numbers ──────────────────────────────────────────────────────────
+\pagestyle{empty}
+
+% ── Section style ────────────────────────────────────────────────────────────
+\titleformat{\section}
+  {\color{cvblue}\bfseries\small\uppercase}
+  {}{0em}{}
+  [\vspace{1pt}{\color{cvblue}\rule{\linewidth}{0.6pt}}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+% ── Custom commands ──────────────────────────────────────────────────────────
+
+% Experience entry: {company}{role}{location}{period}{content}
+\newcommand{\expitem}[5]{%
+  \noindent
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    {\small\bfseries #1} & {\footnotesize\itshape\color{cvgray} #4}
+  \end{tabularx}\\[-3pt]
+  {\footnotesize\itshape\color{cvgray} #2 \textemdash{} #3}
+  \vspace{1pt}
+  #5
+  \vspace{3pt}
+}
+
+% Stack line
+\newcommand{\stack}[1]{%
+  \par\vspace{1pt}{\footnotesize\itshape\color{cvblue}\textbf{Stack:} #1}\par
+}
+
+% ── Document start ───────────────────────────────────────────────────────────
+\begin{document}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  HEADER                                                         ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\begin{minipage}[c]{0.17\linewidth}
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.35cm);
+    \node[inner sep=0pt] at (0,0)
+      {\includegraphics[width=2.8cm, height=2.8cm]{avatar.png}};
+  \end{tikzpicture}
+\end{minipage}%
+\hfill
+\begin{minipage}[c]{0.81\linewidth}
+  \centering
+  {\LARGE\bfseries Ahmed ABDESSAMAD}\\[4pt]
+  {\large\color{cvblue} DevOps \& CloudOps Consultant}\\[5pt]
+  {\small 06~01~86~91~66 \;|\;
+    \href{mailto:Ahmedabdessamed01@gmail.com}{Ahmedabdessamed01@gmail.com} \;|\;
+    Paris, France}\\[3pt]
+  {\small
+    \href{https://www.credly.com/users/ahmed-abdessamad/badges}{Credly} \;|\;
+    \href{https://www.linkedin.com/in/ahmed-abdessamad/}{LinkedIn} \;|\;
+    \href{https://github.com/ahmedabdessamad}{GitHub} \;|\;
+    \href{https://ahmedabdessamad.com}{Portfolio}
+  }
+\end{minipage}
+
+\vspace{5pt}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  PROFILE                                                        ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Profile}
+\noindent{\small DevOps \& CloudOps Consultant with 4~years of professional experience (CNAV, SNCF,
+Tech-Expert) and 18~months as an instructor at GoMyCode (750+ hours, 50+ students). Specialized in
+CI/CD automation, Kubernetes orchestration and Cloud infrastructures (AWS, Azure, Terraform).
+Based in Paris.}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  PROFESSIONAL EXPERIENCE                                        ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Professional Experience}
+
+\expitem{DevOps Consultant – CNAV}{DevOps Consultant}{Paris, France}{March 2024 – present}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item Creating and updating Ansible roles to automate deployments and configuration management.
+    \item Writing Ansible playbooks to automate software installation on target servers.
+    \item Designing and updating Jenkinsfiles for efficient and customized CI/CD pipelines.
+    \item Shell scripts to automate updates across different environments.
+    \item Develop a dashboard to manage our Ansible roles calls
+    \item Resolving technical incidents on the DoIT platform for CNAV teams (N2/N3).
+    
+  \end{itemize}
+  \stack{Ansible \textbar{} Jenkins \textbar{} Shell \textbar{} githab CI/CD \textbar{} Linux \textbar{} Kafka \textbar{} Docker \textbar{} Kubernetes \textbar{} Openshift }
+}
+
+\expitem{CloudOps Engineer – SNCF}{CloudOps Engineer}{Lyon, France}{Aug 2022 – November 2023}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item Terraform modules to automate Azure infrastructure provisioning via Jenkins pipelines.
+    \item Creating and managing Azure Policies.
+    \item Developing unit tests for Terraform projects.
+    \item Shell scripts to reduce RBAC usage and report subscription quotas across Azure.
+    \item Azure Functions to automate log transfer to Datadog.
+    \item Creating dashboards and alerts in Datadog — N2/N3 support.
+  \end{itemize}
+  \stack{Terraform \textbar{} Microsoft Azure \textbar{} Jenkins \textbar{} Datadog \textbar{} Shell \textbar{} Python}
+}
+
+\expitem{DevOps \& Cloud Engineer – Tech-Expert}{DevOps \& Cloud Engineer}{Tunis, Tunisia}{Sep 2021 – Jul 2022}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item Infrastructure migration from OVH to Azure (Terraform provisioning).
+    \item CI/CD pipelines with Bitbucket CI/CD.
+    \item Installing and configuring ELK stack (Filebeat, Elastalert, Metricbeat) for application monitoring.
+    \item Setting up Zabbix + Grafana + Elasticsearch for server metrics.
+    \item Mentoring the Dev team on DevOps culture.
+  \end{itemize}
+  \stack{Terraform \textbar{} Azure \textbar{} Bitbucket CI/CD \textbar{} ELK \textbar{} Zabbix \textbar{} Grafana \textbar{} Docker \textbar{} Linux}
+}
+
+\expitem{DevOps Instructor – GoMyCode \small(part-time)}{DevOps Instructor}{Tunis, Tunisia}{Jan 2021 – Jul 2022}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item 750+ training hours delivered to 50+ students across 6 sessions.
+    \item CI/CD workshops: Jenkins, Ansible, Docker, Git, SonarQube, AWS (EC2, EKS, ECR), Azure.
+    \item Dedicated Kubernetes clusters allowing each student to deploy their own website.
+    \item Terraform infrastructures for hands-on labs.
+  \end{itemize}
+  \stack{Docker \textbar{} Kubernetes \textbar{} Terraform \textbar{} Jenkins \textbar{} Ansible \textbar{} Git \textbar{} SonarQube \textbar{} AWS \textbar{} Azure}
+}
+
+\expitem{DevOps / Full Stack JS Engineer (Final Year Project) – Tech-Expert}{Final Year Internship}{Tunis, Tunisia}{March 2021 – Aug 2021}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item CI/CD pipeline: Azure VMs, Shell, Docker, Jenkins, Selenium, SonarQube.
+    \item Microservices migration from VPS to Azure Kubernetes Service (AKS).
+    \item MERN application for mission and appointment management.
+  \end{itemize}
+  \stack{Docker \textbar{} Jenkins \textbar{} Kubernetes \textbar{} AKS \textbar{} SonarQube \textbar{} Selenium \textbar{} React JS \textbar{} Node JS \textbar{} MongoDB}
+}
+
+\expitem{Summer Internship – TAC-TIC}{Intern}{Tunis, Tunisia}{Aug 2019 – Sep 2019}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item Deploying a Cloud platform based on OpenStack.
+    \item Managing containers with Kubernetes.
+  \end{itemize}
+  \stack{OpenStack \textbar{} Kubernetes}
+}
+
+\pagebreak
+
+\expitem{Final Year Internship (Bachelor's) – ACOBA}{Intern}{Monastir, Tunisia}{Jan 2018 – Jun 2018}{%
+  \begin{itemize}[leftmargin=14pt,itemsep=0pt,topsep=2pt,parsep=0pt,label=\tiny\textbullet]
+    \small
+    \item Developing a web application for business services (Bootstrap, Laravel, MySQL).
+    \item Containerizing the application with Docker.
+  \end{itemize}
+  \stack{Laravel \textbar{} MySQL \textbar{} Bootstrap \textbar{} Docker}
+}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  CERTIFICATIONS                                                 ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Certifications}
+\begin{tabularx}{\linewidth}{@{}p{2.8cm} X@{}}
+  {\small\bfseries Certifications} &
+  {\small \href{https://www.credly.com/users/ahmed-abdessamad/badges}{CKA}: Certified Kubernetes Administrator \;|\;
+    \href{https://www.credly.com/users/ahmed-abdessamad/badges}{AWS SAA}: Solutions Architect – Associate} \\
+  &
+  {\small \href{https://www.credly.com/users/ahmed-abdessamad/badges}{Terraform Associate (003)}: HashiCorp \;|\;
+    \href{https://www.credly.com/users/ahmed-abdessamad/badges}{AZ-900}: Microsoft Azure Fundamentals} \\
+  &
+  {\small \href{https://www.credly.com/users/ahmed-abdessamad/badges}{RH294}: Linux Automation with Ansible \;|\;
+    \href{https://www.credly.com/users/ahmed-abdessamad/badges}{AWS CCP (CLF-C02)}: Cloud Practitioner} \\[3pt]
+  {\small\bfseries Badges} &
+  {\small \href{https://drive.google.com/drive/folders/14_cOCS-_iq4V5vDgMXZx_dS1FZpY6Oon}{20+ certifications} in the DevOps \& Cloud Computing field} \\
+\end{tabularx}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  EDUCATION                                                      ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  {\small\bfseries ESPRIT – Private Higher School of Engineering and Technology} &
+  {\footnotesize\itshape\color{cvgray} Sep 2018 – Sep 2021} \\
+  {\footnotesize\itshape\color{cvgray} Ariana, Tunisia \textemdash{} Computer Engineering Degree (MEng equivalent)} & \\[3pt]
+  {\small\bfseries ISITC – Higher Institute of Computer Science and Communication Technologies} &
+  {\footnotesize\itshape\color{cvgray} Sep 2015 – Jun 2018} \\
+  {\footnotesize\itshape\color{cvgray} Sousse, Tunisia \textemdash{} Applied Bachelor's in Computer Networks} & \\
+\end{tabularx}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  SKILLS                                                         ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X@{}}
+  {\small\bfseries DevOps} &
+  {\small Git \textbar{} Jenkins \textbar{} Docker \textbar{} Docker Compose \textbar{} Nginx \textbar{}
+    Kubernetes \textbar{} Ansible \textbar{} Shell Script \textbar{} Nexus \textbar{} ELK \textbar{}
+    DataDog \textbar{} SonarQube \textbar{} Zabbix \textbar{} Azure DevOps \textbar{} Prometheus \textbar{} Grafana} \\[2pt]
+  {\small\bfseries Cloud} &
+  {\small Terraform \textbar{} Microsoft Azure \textbar{} AWS (EC2, RDS, EKS, ECR) \textbar{} OpenStack \textbar{} OVH} \\[2pt]
+  {\small\bfseries Operating Systems} &
+  {\small Linux \textbar{} Windows} \\[2pt]
+  {\small\bfseries Development} &
+  {\small JavaScript (React JS, Node JS) \textbar{} Laravel 6 \textbar{} Symfony 3.4} \\[2pt]
+  {\small\bfseries Databases} &
+  {\small MongoDB \textbar{} MySQL} \\[2pt]
+  {\small\bfseries SCM} &
+  {\small GitHub \textbar{} GitLab \textbar{} Bitbucket} \\[2pt]
+  {\small\bfseries Methodologies} &
+  {\small SCRUM \textbar{} AGILE} \\[2pt]
+  {\small\bfseries Languages} &
+  {\small French — Fluent \;|\; English — Fluent \;|\; Arabic — Native} \\
+\end{tabularx}
+
+% ╔══════════════════════════════════════════════════════════════════╗
+% ║  INTERESTS                                                      ║
+% ╚══════════════════════════════════════════════════════════════════╝
+\section{Interests}
+\begin{tabularx}{\linewidth}{@{}p{3.8cm} X@{}}
+  {\small\bfseries YouTube} &
+  {\small Free courses in Arabic: DevOps, Docker, Kubernetes, CI/CD\ldots} \\[2pt]
+  {\small\bfseries Hobbies} &
+  {\small Sport \textbar{} Travel \textbar{} Agent AI \textbar{} Content Creation} \textbar{} Blockchain  \textbar{} Cryptocurrency \\
+\end{tabularx}
+
+\end{document}
